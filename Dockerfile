@@ -19,6 +19,8 @@ RUN apt-get update && apt-get install -y \
     bzip2 \
     libx11-6 \
  && rm -rf /var/lib/apt/lists/*
+ 
+RUN echo "downloading domainbed"
 
 # Create a working directory
 RUN mkdir /app
