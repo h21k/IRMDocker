@@ -21,6 +21,8 @@ RUN apt-get update && apt-get install -y \
  && rm -rf /var/lib/apt/lists/*
  
 RUN echo "downloading domainbed"
+RUN python3 -m domainbed.scripts.download \
+       --data_dir=./domainbed/data
 
 # Create a working directory
 RUN mkdir /app
