@@ -15,16 +15,11 @@ RUN apt-get update && apt-get install -y \
     ca-certificates \
     sudo \
     bash \
+    gcc \
     git \
     bzip2 \
     libx11-6 \
  && rm -rf /var/lib/apt/lists/*
- 
-RUN echo "downloading domainbed"
-RUN git clone https://github.com/facebookresearch/DomainBed.git
-
-RUN python3 -m domainbed.scripts.download \
-       --data_dir=./domainbed/data
 
 # Create a working directory
 RUN mkdir /app
@@ -67,4 +62,13 @@ RUN sh -c 'echo -e IMAGE COMPLETED - READY TO RUN'
 
 # Set the default command to python3
 CMD ["python3"]
+
+RUN echo "downloading domainbed"
+#RUN git clone https://github.com/facebookresearch/DomainBed.git
+RUN git clone https://github.com/h21k/DomainBed.git
+
+#Downloading the data
+RUN cd DomainBed && python3 -m domainbed.scripts.download \
+    --data_dir=./domainbed/data
+
 CMD tail -f /dev/null
