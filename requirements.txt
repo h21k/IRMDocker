@@ -17,3 +17,4 @@ torch
 streamlit
 gdown
 wilds
+torch-scatter
