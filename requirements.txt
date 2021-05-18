@@ -1,6 +1,6 @@
 numpy==1.19.0
 pandas
-more-itertools 
+more-itertools
 scipy
 matplotlib
 statsmodels
@@ -17,4 +17,3 @@ torch
 streamlit
 gdown
 wilds
-torch-scatter
