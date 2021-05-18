@@ -59,7 +59,8 @@ RUN conda install -y -c pytorch \
 
 # Installing neccessary libraries
 RUN pip install -r requirements.txt
-RUN sh -c 'echo -e IMAGE COMPLETED - READY TO RUN'
+
+RUN pip install torch-scatter -f https://pytorch-geometric.com/whl/torch-1.8.0+${CUDA}.html
 
 # Set the default command to python3
 CMD ["python3"]
@@ -71,5 +72,7 @@ RUN git clone https://github.com/h21k/DomainBed.git
 #Downloading the data
 RUN cd DomainBed && python3 -m domainbed.scripts.download \
     --data_dir=./domainbed/data
+
+RUN sh -c 'echo -e IMAGE COMPLETED - READY TO RUN'
 
 CMD tail -f /dev/null
