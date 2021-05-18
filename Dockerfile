@@ -16,6 +16,7 @@ RUN apt-get update && apt-get install -y \
     sudo \
     bash \
     gcc \
+    g++ \
     git \
     bzip2 \
     libx11-6 \
