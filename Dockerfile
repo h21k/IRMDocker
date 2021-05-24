@@ -51,11 +51,7 @@ RUN curl -sLo ~/miniconda.sh https://repo.continuum.io/miniconda/Miniconda3-py37
 # && conda install -y python==3.8.1 \
 
 # CUDA 10.2-specific steps
-RUN conda install -y -c pytorch \
-    cudatoolkit=10.2 \
-    "pytorch=1.5.0=py3.7_cuda10.2.89_cudnn7.6.5_0" \
-    "torchvision=0.6.0=py37_cu102" \
- && conda clean -ya
+PART INOPERABLE - FILE WILL BE CHANGED
 
 # Installing neccessary libraries
 RUN pip install -r requirements.txt
