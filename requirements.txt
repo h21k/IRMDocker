@@ -9,11 +9,10 @@ google-cloud-storage==1.29.0
 google-auth-oauthlib==0.4.1
 treelib==1.6.1
 scikit-learn
-tensorflow==1.15.0
-tensorflow-probability==0.8.0
+tensorflow==2.5.0
+tensorflow-probability==0.12.2
 plotly
 networkx
-torch
 streamlit
 gdown
 wilds
